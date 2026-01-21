@@ -9,8 +9,13 @@ import java.io.PrintWriter;
 
 public class SquareServlet extends HttpServlet {
 
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        int k = (int) request.getAttribute("sum");
+        k = k * k;
+
         PrintWriter out = response.getWriter();
-        out.println("Hello From Square Servlet");
+        out.println("Result is : " + k + "");
     }
 }

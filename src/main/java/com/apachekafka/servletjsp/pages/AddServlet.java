@@ -23,10 +23,11 @@ public class AddServlet extends HttpServlet {
     }*/
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        int i = Integer.parseInt(request.getParameter("first"));
-        int j = Integer.parseInt(request.getParameter("second"));
+        int i = Integer.parseInt(request.getParameter("num1"));
+        int j = Integer.parseInt(request.getParameter("num2"));
 
         int sum = i + j;
+        request.setAttribute("sum",sum);
 
         // WE wanna called the Square Servlet  from this servlet by  using Request Dispatcher
         RequestDispatcher rd = request.getRequestDispatcher("square");
