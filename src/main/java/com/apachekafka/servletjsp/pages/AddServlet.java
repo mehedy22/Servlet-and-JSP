@@ -27,11 +27,12 @@ public class AddServlet extends HttpServlet {
         int j = Integer.parseInt(request.getParameter("num2"));
 
         int sum = i + j;
-        request.setAttribute("sum",sum);
+        response.sendRedirect("square?sum=" + sum);
+     /*   request.setAttribute("sum",sum);
 
         // WE wanna called the Square Servlet  from this servlet by  using Request Dispatcher
         RequestDispatcher rd = request.getRequestDispatcher("square");
-        rd.forward(request,response);
+        rd.forward(request,response);*/
 
     }
 }

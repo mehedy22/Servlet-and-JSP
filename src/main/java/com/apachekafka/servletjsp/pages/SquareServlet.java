@@ -12,7 +12,7 @@ public class SquareServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        int k = (int) request.getAttribute("sum");
+        int k = Integer.parseInt(request.getParameter("sum"));
         k = k * k;
 
         PrintWriter out = response.getWriter();
