@@ -1,10 +1,7 @@
 package com.apachekafka.servletjsp.pages;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 
 import java.io.IOException;
@@ -28,13 +25,21 @@ public class AddServlet extends HttpServlet {
         int j = Integer.parseInt(request.getParameter("num2"));
 
         int sum = i + j;
-        // Sending or Working with Tomcat Session Management
 
+
+        // Sending or Working with Tomcat Session Management
+/*
         HttpSession session=request.getSession();
         session.setAttribute("sum",sum);
-        response.sendRedirect("square?sum=" + sum);
-     /*   request.setAttribute("sum",sum);
+        response.sendRedirect("square?sum=" + sum);*/
 
+        // Sending or Working with Cookies
+        Cookie cookie = new Cookie("sum", sum + "");
+        response.addCookie(cookie);
+        response.sendRedirect("square?sum=" + sum);
+
+
+     /*   request.setAttribute("sum",sum);
         // WE wanna called the Square Servlet  from this servlet by  using Request Dispatcher
         RequestDispatcher rd = request.getRequestDispatcher("square");
         rd.forward(request,response);*/

@@ -1,9 +1,6 @@
 package com.apachekafka.servletjsp.pages;
 
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,10 +17,23 @@ public class SquareServlet extends HttpServlet {
         out.println("Result is : " + k + "");*/
 
         // Receiving Through Session
-
+/*
         HttpSession session = request.getSession();
         int k = (int) session.getAttribute("sum");
+        k = k * k;*/
+
+        // Extract the Cookies from Request Object
+        // Receiving Through Cookies
+        int k = 0;
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("sum")) {
+                k = Integer.parseInt(cookie.getValue());
+            }
+        }
+
         k = k * k;
+
 
         PrintWriter out = response.getWriter();
         out.println("Result is : " + k + "");
