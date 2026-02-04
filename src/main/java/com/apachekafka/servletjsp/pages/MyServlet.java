@@ -1,5 +1,6 @@
 package com.apachekafka.servletjsp.pages;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -15,10 +16,15 @@ public class MyServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("Hello World");
 
-
-        ServletContext context = getServletContext();
+    // Fetching from Servlet Context
+    /*    ServletContext context = getServletContext();
         String str = context.getInitParameter("name");
         out.println(str);
-        context.getInitParameter("laptop");
+        context.getInitParameter("laptop");*/
+
+        // Fetching from Servlet Config
+        ServletConfig config = getServletConfig();
+        String str = config.getInitParameter("name");
+        out.println(str);
     }
 }

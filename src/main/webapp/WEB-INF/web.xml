@@ -26,6 +26,11 @@
     <servlet>
         <servlet-name>myservlet</servlet-name>
         <servlet-class>com.apachekafka.servletjsp.pages.MyServlet</servlet-class>
+
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>pizzahut</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     
