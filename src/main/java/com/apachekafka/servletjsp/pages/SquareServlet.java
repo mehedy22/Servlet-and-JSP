@@ -1,10 +1,12 @@
 package com.apachekafka.servletjsp.pages;
 
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@WebServlet(name = "squareServlet", value = "/square")
 public class SquareServlet extends HttpServlet {
 
     @Override

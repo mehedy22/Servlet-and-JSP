@@ -1,11 +1,13 @@
 package com.apachekafka.servletjsp.pages;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 
 import java.io.IOException;
 
+@WebServlet(name = "addServlet", value = "/add")
 public class AddServlet extends HttpServlet {
     // This two object is created by tomcat HttpServletRequest and HttpServletResponse
 /*    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
