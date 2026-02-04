@@ -22,4 +22,25 @@
         <servlet-name>pqr</servlet-name>
         <url-pattern>/square</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>myservlet</servlet-name>
+        <servlet-class>com.apachekafka.servletjsp.pages.MyServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>myservlet</servlet-name>
+        <url-pattern>/myservlet</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>Mehedi</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>laptop</param-name>
+        <param-value>ASUS</param-value>
+    </context-param>
 </web-app>
